@@ -1,0 +1,30 @@
+.section_main {
+    padding: 150px 0;
+    position: relative;
+    z-index: 0;
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, #151516 0%, rgba(0, 0, 0, 0.00) 100%);
+        z-index: -1;
+    }
+}
+
+
+
+
+
+@media (min-width: 1366px) {
+    .section_main {
+        padding: 200px 0;
+    }
+
+}
+
+
+@media (min-width: 1880px) {
+    .section_main {
+        padding: 230px 0;
+    }
+}

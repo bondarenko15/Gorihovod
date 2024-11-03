@@ -1,0 +1,275 @@
+.popular_products {
+    padding: 30px 0;
+
+    .container {
+        .products_wrapper {
+            &-item {
+                margin-top: 40px;
+                box-shadow: (0px 5px 5px rgba(0, 0, 0, 0.25));
+                .block_link {
+                    height: 216px;
+                    position: relative;
+                    padding: 20px;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(180deg, rgba(21, 21, 22, 0.56) 0.06%, rgba(0, 0, 0, 0.00) 88.37%);
+
+                    }
+
+                    &-top {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        position: relative;
+
+                        .block_flex {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            gap: 0 15px;
+
+                            img {
+                                display: block;
+                                object-fit: cover;
+                                flex-shrink: 0;
+                            }
+
+                            h4 {
+                                color: $colorWhite;
+                                font-family: Overpass;
+                                font-size: 20px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 126.7%;
+                                text-transform: uppercase;
+                                display: block;
+                                max-width: 145px;
+
+                            }
+                        }
+
+                        .link_btn {
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background: $colorBtn;
+                            border-radius: 5px;
+
+                            img {
+                                width: 15px;
+                                height: 12px;
+                                display: block;
+
+                            }
+                        }
+                    }
+                }
+
+                .block_stages {
+                    background: $colorDark;
+                    padding: 20px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: stretch;
+                    flex-wrap: wrap;
+                    gap: 20px;
+
+                    .stages_item {
+                        width: calc(50% - 10px);
+                        border: 1px solid #393A3C;
+                        padding: 15px;
+                        cursor: pointer;
+
+                        a {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: flex-start;
+
+                            .img {
+                                width: 70px;
+                                height: 70px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                img {
+                                    width: auto;
+                                    height: auto;
+                                }
+                            }
+
+                            p {
+                                color: $colorWhite;
+                                font-family: Overpass;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 300;
+                                line-height: 17px;
+                                letter-spacing: 0.16px;
+                                text-transform: capitalize;
+                                display: block;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 648px) {
+    .popular_products {
+        padding: 35px 0;
+
+        .container {
+            .products_wrapper {
+                &-item {
+
+                    .block_link {
+                        &-top {
+                            .block_flex {
+                                h4 {
+                                    font-weight: 600;
+                                    line-height: 126.7%;
+                                    max-width: 250px;
+
+                                }
+                            }
+
+                            .link_btn {
+                                width: 26px;
+                                height: 26px;
+
+                                img {
+                                    width: 12px;
+                                    height: 9px;
+
+                                }
+                            }
+                        }
+                    }
+
+                    .block_stages {
+                        .stages_item {
+                            width: calc(25% - 15px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media (min-width: 1366px) {
+    .popular_products {
+        padding: 35px 0;
+
+        .container {
+            .products_wrapper {
+                &-item {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: stretch;
+
+                    .block_link {
+                        height: auto;
+                        width: 40%;
+                        flex-shrink: 0;
+                        height: 315px;
+                        &-top {
+                            .block_flex {
+                                h4 {
+                                    font-size: 24px;
+                                    max-width: 270px;
+                                }
+                            }
+
+                            .link_btn {
+                                width: 28px;
+                                height: 28px;
+
+                                img {
+                                    width: 13px;
+                                    height: 10px;
+                                }
+                            }
+                        }
+                    }
+
+                    .block_stages {
+                        width: 60%;
+
+                        .stages_item {
+                            width: calc(25% - 15px);
+                            transition: .1s all ease;
+                            height: calc(50% - 10px);
+                            &:hover {
+                                transform: scale(1.05);
+                                background: #393A3C;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1880px) {
+    .popular_products {
+        padding: 50px 0;
+
+        .container {
+            .products_wrapper {
+                &-item {
+                    .block_link {
+                        height: 360px;
+                        &-top {
+                            .block_flex {
+                                h4 {
+                                    font-size: 24px;
+                                    max-width: 270px;
+                                }
+                            }
+
+                            .link_btn {
+                                width: 28px;
+                                height: 28px;
+
+                                img {
+                                    width: 13px;
+                                    height: 10px;
+                                }
+                            }
+                        }
+                    }
+
+                    .block_stages {
+                        width: 60%;
+                        padding: 30px;
+                        .stages_item {
+                            width: calc(25% - 15px);
+                            transition: .1s all ease;
+
+                            &:hover {
+                                transform: scale(1.05);
+                                background: #393A3C;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

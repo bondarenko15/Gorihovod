@@ -1,0 +1,242 @@
+.form {
+    .radio-group {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        p {
+            width: 100%;
+            display: block;
+            margin-top: 10px;
+            color: $colorWhite;
+            font-family: Overpass;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px;
+            letter-spacing: 0.16px;
+        }
+
+        .radio-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: calc(50% - 5px);
+            cursor: pointer;
+            color: $colorWhite;
+            font-family: Overpass;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            input[type="radio"] {
+                display: none;
+            }
+
+            .custom-radio {
+                width: 20px;
+                height: 20px;
+                border: 2px solid #FFCC02;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &::after {
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    background-color: #FFCC02;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: opacity 0.2s;
+                }
+            }
+
+            input[type="radio"]:checked+.custom-radio::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    
+
+    .inputs {
+        margin-top: 30px;
+
+        .input {
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            input,
+            textarea {
+                display: block;
+                width: 100%;
+                border-radius: 3px;
+                background: $colorWhite;
+                padding: 15px;
+                border: none;
+                color: $colorDark;
+                font-family: Overpass;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+            }
+
+            textarea {
+                min-height: 100px;
+            }
+
+        }
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            color: $colorDark;
+            font-family: Overpass;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            margin-bottom: 15px;
+    
+            &__selected {
+                padding: 15px;
+                background: $colorWhite;
+                border-radius: 3px;
+                cursor: pointer;
+                position: relative;
+    
+                &:after {
+                    content: '▼';
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: #b7b7b7;
+                }
+            }
+    
+            &__options {
+                display: none;
+                position: absolute;
+                width: 100%;
+                background: $colorWhite;
+                border-radius: 5px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                padding: 20px;
+                color: $colorDark;
+                z-index: 1;
+                font-family: Overpass;
+                font-size: 14px;
+    
+                .custom-select__option {
+                    cursor: pointer;
+                    margin-bottom: 10px;
+                }
+            }
+    
+            &--open .custom-select__options {
+                display: block;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 648px) {
+    .form {
+        .radio-group {
+            .radio-container {
+                width: auto;
+                font-size: 16px;
+            }
+        }
+
+        
+
+        .inputs {
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 15px 20px;
+            flex-wrap: wrap;
+            .input {
+                margin-bottom: 0;
+                width: calc(50% - 10px);
+                &:last-child {
+                    width: 100%;
+                }
+                input,
+                textarea {
+                    padding: 15px 20px;
+                    font-size: 16px;
+                }
+
+
+            }
+            
+            .custom-select {
+                width: calc(50% - 10px);
+                font-size: 16px;
+                margin-bottom: 0;
+    
+                &__selected {
+                    padding: 15px;
+                    background: $colorWhite;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    position: relative;
+    
+                    &:after {
+                        content: '▼';
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: #b7b7b7;
+                    }
+                }
+    
+                &__options {
+                    display: none;
+                    position: absolute;
+                    width: 100%;
+                    background: $colorWhite;
+                    border-radius: 5px;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                    padding: 20px;
+                    color: $colorDark;
+                    z-index: 1;
+                    font-family: Overpass;
+                    font-size: 14px;
+    
+                    .custom-select__option {
+                        cursor: pointer;
+                        margin-bottom: 10px;
+                    }
+                }
+    
+                &--open .custom-select__options {
+                    display: block;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+@media (min-width: 1366px) {}
+
+
+@media (min-width: 1880px) {}

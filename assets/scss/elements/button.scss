@@ -1,0 +1,171 @@
+.btn {
+    border-radius: 4px;
+    background: $colorBtn;
+    color: $colorTextBtn;
+    font-family: Overpass;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: block;
+    transition: .2s all ease;
+    text-align: center;
+
+    &:active {
+        transform: translateY(2px);
+    }
+
+    &_main {
+        padding: 12px 40px;
+        margin-top: 40px;
+    }
+
+    &_form {
+        width: 100%;
+        padding: 12px;
+        margin-top: 25px;
+        border: none;
+    }
+
+    &_filter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0 7px;
+        position: relative;
+        padding: 10px;
+        width: 158px;
+        border: none;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 16px;
+            background: url('../img/filter.svg') center center/cover no-repeat;
+        }
+    }
+
+    &_submitFilter {
+        width: 100%;
+        padding: 12px;
+        margin-top: 25px;
+        border: none;
+    }
+
+    &_productBanner {
+        margin: 30px auto 0;
+        width: 335px;
+        padding: 10px 14px;
+    }
+
+    &_download {
+        color: #414345;
+        padding: 10px 14px;
+        text-transform: capitalize;
+    }
+
+    &_transparent {
+        width: 100%;
+        padding: 10px 14px;
+        color: #333537;
+        background: transparent;
+        border: 1px solid $colorDark;
+    }
+
+    &_product {
+        color: #414345;
+        padding: 10px 14px;
+        width: 330px;
+        margin: 0 auto;
+        border: none;
+    }
+}
+
+
+@media (min-width: 648px) {
+    .btn {
+        &_main {
+            padding: 20px 50px;
+            margin-top: 35px;
+        }
+
+        &_form {
+            width: auto;
+            padding: 15px 50px;
+            margin-top: 20px;
+        }
+
+        &_submitFilter {
+            width: 250px;
+            padding: 12px;
+            margin: 25px auto 0;
+        }
+
+        &_productBanner {
+            width: 300px;
+        }
+
+        &_download {
+            width: 220px;
+        }
+
+        &_transparent {
+            width: 220px;
+        }
+        &_product {
+            display: inline-block;
+            padding: 15px 70px;
+            width: 220px;
+            margin: 0;
+        }
+    }
+
+}
+
+
+@media (min-width: 1366px) {
+    .btn {
+        font-size: 18px;
+
+        &_main {
+            padding: 20px 50px;
+            margin-top: 40px;
+            max-width: 850px;
+        }
+
+        &_filter {
+            display: none;
+        }
+
+        &_productBanner {
+            width: 340px;
+        }
+
+        &_download {
+            width: 250px;
+            font-size: 16px;
+        }
+
+        &_transparent {
+            width: 250px;
+            font-size: 16px;
+        }
+
+    }
+}
+
+@media (min-width: 1880px) {
+    .btn {
+        font-size: 20px;
+
+        &_main {
+            padding: 20px 55px;
+            margin-top: 50px;
+        }
+
+        &_productBanner {
+            margin-top: 80px;
+        }
+    }
+}
