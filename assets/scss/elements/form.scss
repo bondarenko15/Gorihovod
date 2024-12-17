@@ -62,7 +62,7 @@
         }
     }
 
-    
+
 
     .inputs {
         margin-top: 30px;
@@ -95,25 +95,26 @@
             }
 
         }
+
         .custom-select {
             position: relative;
             display: inline-block;
             width: 100%;
-            color: $colorDark;
-            font-family: Overpass;
-            font-size: 14px;
+            color: #C9C9C9;
+            font-family: Inter;
+            font-size: 16px;
             font-style: normal;
-            font-weight: 300;
+            font-weight: 400;
             line-height: normal;
             margin-bottom: 15px;
-    
+
             &__selected {
                 padding: 15px;
                 background: $colorWhite;
                 border-radius: 3px;
                 cursor: pointer;
                 position: relative;
-    
+
                 &:after {
                     content: '▼';
                     position: absolute;
@@ -123,7 +124,7 @@
                     color: #b7b7b7;
                 }
             }
-    
+
             &__options {
                 display: none;
                 position: absolute;
@@ -136,13 +137,13 @@
                 z-index: 1;
                 font-family: Overpass;
                 font-size: 14px;
-    
+
                 .custom-select__option {
                     cursor: pointer;
                     margin-bottom: 10px;
                 }
             }
-    
+
             &--open .custom-select__options {
                 display: block;
             }
@@ -160,7 +161,7 @@
             }
         }
 
-        
+
 
         .inputs {
             margin-top: 30px;
@@ -169,12 +170,15 @@
             align-items: flex-start;
             gap: 15px 20px;
             flex-wrap: wrap;
+
             .input {
                 margin-bottom: 0;
                 width: calc(50% - 10px);
+
                 &:last-child {
                     width: 100%;
                 }
+
                 input,
                 textarea {
                     padding: 15px 20px;
@@ -183,19 +187,19 @@
 
 
             }
-            
+
             .custom-select {
                 width: calc(50% - 10px);
                 font-size: 16px;
                 margin-bottom: 0;
-    
+
                 &__selected {
                     padding: 15px;
                     background: $colorWhite;
                     border-radius: 3px;
                     cursor: pointer;
                     position: relative;
-    
+
                     &:after {
                         content: '▼';
                         position: absolute;
@@ -205,7 +209,7 @@
                         color: #b7b7b7;
                     }
                 }
-    
+
                 &__options {
                     display: none;
                     position: absolute;
@@ -218,13 +222,13 @@
                     z-index: 1;
                     font-family: Overpass;
                     font-size: 14px;
-    
+
                     .custom-select__option {
                         cursor: pointer;
                         margin-bottom: 10px;
                     }
                 }
-    
+
                 &--open .custom-select__options {
                     display: block;
                 }

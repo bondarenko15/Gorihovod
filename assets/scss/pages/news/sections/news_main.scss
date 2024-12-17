@@ -1,0 +1,223 @@
+.news_main {
+    background: #FFFEFB;
+    padding: 40px 0;
+
+    .container {
+        .news_items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .news_item {
+                height: 260px;
+                display: block;
+                padding: 20px;
+                position: relative;
+                z-index: 1;
+
+                &::before {
+                    transition: .2s all ease;
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    z-index: -1;
+                    background: linear-gradient(180deg, rgba(21, 21, 22, 0.56) 0.06%, rgba(0, 0, 0, 0.00) 88.37%);
+                }
+
+                &-date {
+                    color: $colorWhite;
+                    font-family: Overpass;
+                    font-size: 12px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                }
+
+                &-title {
+                    color: $colorWhite;
+                    font-family: Overpass;
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    display: block;
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .pagination {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px 0;
+
+            .btn_more {
+                color: #414345;
+                font-family: Overpass;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                align-items: stretch;
+                gap: 0 5px;
+                background: transparent;
+                border: none;
+
+                &::before {
+                    content: '';
+                    background: url('../img/btn_more.svg') center center/cover no-repeat;
+                    display: block;
+                    width: 18px;
+                    height: 18px;
+                }
+
+                &.rotate::before {
+                    animation: rotate 0.5s linear;
+                }
+            }
+
+            ul {
+                display: flex;
+                justify-content: center;
+                padding: 0;
+                list-style: none;
+                color: #414345;
+                font-family: Overpass;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+
+                .page-item {
+                    margin: 0 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.active a {
+                        background-color: $colorBtn;
+
+                        &:hover {
+                            background: $colorBtn;
+                        }
+                    }
+
+                    a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 5px;
+                        color: #333;
+                        text-decoration: none;
+                        border-radius: 4px;
+                        transition: background-color 0.3s, color 0.3s;
+
+                        &:hover {
+                            background-color: #f0f0f0;
+                            color: #333;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+@media (min-width: 648px) {
+    .news_main {
+        padding: 60px 0;
+
+        .container {
+            .news_items {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .news_item {
+                    width: calc(50% - 10px);
+
+                    &-date {
+                        font-size: 14px;
+                    }
+
+                    &-title {
+                        font-size: 18px;
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1366px) {
+    .news_main {
+        padding: 70px 0;
+
+        .container {
+            .news_items {
+                .news_item {
+                    width: calc(33% - 10px);
+                    padding: 25px;
+                    height: 315px;
+                    transition: .2s all ease;
+                    &:hover {
+                        transform: scale(1.02);
+                        transition: .2s all ease;
+                        &::before {
+                            background: linear-gradient(180deg,rgba(21,21,22,0.86) .06%,transparent 78.37%);
+                        }
+                    }
+                    &-date {
+                        font-size: 16px;
+                    }
+
+                    &-title {
+                        font-size: 20px;
+                        margin-top: 8px;
+                    }
+                }
+            }
+
+            .pagination {
+                ul {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1880px) {
+    .news_main {
+        padding: 80px 0;
+
+        .container {
+            .news_items {
+                .news_item {
+                    padding: 30px;
+                    height: 430px;
+
+                    &-date {
+                        font-size: 18px;
+                    }
+
+                    &-title {
+                        font-size: 24px;
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,195 @@
+.mobile_menu {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    transition: .2s all ease;
+    z-index: 1000;
+    background: #222327;
+    height: 100%;
+    width: 85vw;
+
+    .close_menu {
+        border: none;
+        display: block;
+        background: url('../img/close_menu.svg') center center/cover no-repeat;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    &-wrapper {
+        padding: 45px 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        height: 100vh;
+
+        .mobile_menu-nav {
+            max-height: 70vh;
+            overflow-y: scroll;
+
+            li {
+                width: 100%;
+                a {
+                    color: $colorWhite;
+                    font-family: Overpass;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: normal;
+                    letter-spacing: 0.32px;
+                }
+
+                .mobile_menu-subnav {
+                    li {
+                        a {
+                            color: $colorWhite;
+                            color: #FFF;
+                            font-family: Overpass;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 300;
+                            line-height: 24px;
+                            letter-spacing: 0.14px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header_mobile {
+            a {
+                color: $colorWhite;
+                font-family: Overpass;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 0 10px;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    background: url('../img/phone.svg')center center/cover no-repeat;
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+
+
+        }
+
+        .social_media {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0 10px;
+
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.80);
+                cursor: pointer;
+                transition: .2s ease all;
+
+                a {
+                    display: block;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        object-fit: cover;
+                        ;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobile_menuActive {
+    left: 0;
+}
+
+.menu_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+    transition: .2s opacity ease;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.mobile_menu-nav a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+}
+
+.mobile_menu-nav a.has-subnav {
+    padding-right: 30px;
+}
+
+.mobile_menu-nav a.has-subnav::after {
+    content: '>';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.mobile_menu-nav a.open::after {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.mobile_menu-nav ul {
+    display: none;
+    margin-left: 20px;
+}
+
+.mobile_menu-nav ul.open {
+    display: block;
+}
+
+
+@media (min-width: 648px) {
+
+
+}
+
+
+@media (min-width: 1366px) {
+    .mobile_menu {
+        display: none;
+    }
+
+}
+
+
+@media (min-width: 1880px) {
+
+}

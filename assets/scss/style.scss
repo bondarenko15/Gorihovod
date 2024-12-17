@@ -20,7 +20,8 @@
 @import "repeat_sections/banners";
 @import "repeat_sections/contacts_form";
 @import "repeat_sections/section_main";
-
+@import "repeat_sections/pages_main";
+@import "repeat_sections/mobile_menu";
 
 
 
@@ -28,8 +29,10 @@
 @import "pages/index/index";
 @import "pages/catalog/catalog";
 @import "pages/product-card/product-card";
-
-
+@import "pages/blog/blog";
+@import "pages/news/news";
+@import "pages/faq/faq";
+@import "pages/404/404";
 
 body {
     min-height: 100vh;
@@ -37,7 +40,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    
 }
+
 .no-scroll {
     overflow: hidden;
 }

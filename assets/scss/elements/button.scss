@@ -80,6 +80,10 @@
         margin: 0 auto;
         border: none;
     }
+    &_404 {
+        margin-top: 20px;
+        padding: 12px 50px;
+    }
 }
 
 
@@ -119,6 +123,10 @@
             width: 220px;
             margin: 0;
         }
+        &_404 {
+            margin-top: 35px;
+            padding: 15px 50px;
+        }
     }
 
 }
@@ -127,7 +135,9 @@
 @media (min-width: 1366px) {
     .btn {
         font-size: 18px;
-
+        &:hover {
+            background: #E4B600;
+        }
         &_main {
             padding: 20px 50px;
             margin-top: 40px;
@@ -151,6 +161,10 @@
             width: 250px;
             font-size: 16px;
         }
+        &_404 {
+            margin-top: 35px;
+            padding: 15px 45px;
+        }
 
     }
 }
@@ -166,6 +180,10 @@
 
         &_productBanner {
             margin-top: 80px;
+        }
+        &_404 {
+            margin-top: 45px;
+            padding: 20px 45px;
         }
     }
 }
