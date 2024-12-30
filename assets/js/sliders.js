@@ -51,7 +51,7 @@ export default function initSlider() {
                 },
                 1366: {
                     slidesPerView: 8,
-                    spaceBetween: 20,
+                    spaceBetween: 50,
                 }
 
             }
@@ -94,6 +94,61 @@ export default function initSlider() {
             },
 
         });
+    }
+
+
+
+    const moreSlider = document.querySelector('.moreSlider') || null;
+
+    if (moreSlider) {
+        const slider = new Swiper(moreSlider, {
+            slidesPerView: 1,
+            spaceBetween: 40,
+            loop: true,
+            pagination: {
+                el: ".moreSlider .swiper-pagination",
+                dynamicBullets: true,
+            },
+            breakpoints: {
+                648: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1366: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            }
+        });
+        
+    }
+
+
+    const teamSlider = document.querySelector('.teamSlider') || null;
+
+    if (teamSlider) {
+        const slider = new Swiper(teamSlider, {
+            slidesPerView: 'auto',
+            spaceBetween: 15,
+            loop: true,
+            pagination: {
+                el: ".teamSlider .swiper-pagination",
+                dynamicBullets: true,
+            },
+            breakpoints: {
+                648: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                960: {
+                    slidesPerView: 3,
+                },
+                1366: {
+                    slidesPerView: 4,
+                },
+            }
+        });
+        
     }
 }
 

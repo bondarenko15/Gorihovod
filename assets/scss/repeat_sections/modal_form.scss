@@ -1,0 +1,55 @@
+.modal_form {
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: .2s all ease;
+    transform: scale(0);
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(34, 36, 38, 0.70);
+        z-index: -1;
+    }
+
+    .block_form {
+        max-width: 90%;
+    }
+
+}
+
+.modal_formActive.contacts {
+    transition: .2s all ease;
+    opacity: 1;
+    overflow: visible;
+    transform: scale(1);
+    visibility: visible;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .contacts_form-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .block_form {
+            position: relative;
+            .close_form {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: url('../img/close_modal2.svg') center center/cover no-repeat;
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+}

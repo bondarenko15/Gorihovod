@@ -30,6 +30,29 @@ if (fancybox) {
 
 
 
+const btnModal = document.querySelector('.btnModal');
+const modalForm = document.querySelector('.modal_form');
+const closeForm = document.querySelector('.close_form');
+const blockForm = document.querySelector('.block_form');
+const body = document.querySelector('body');
+
+
+btnModal.addEventListener('click', () => {
+  modalForm.classList.add('modal_formActive');
+  body.classList.add('no-scroll');
+});
+
+closeForm.addEventListener('click', () => {
+  modalForm.classList.remove('modal_formActive');
+  body.classList.remove('no-scroll');
+});
+
+modalForm.addEventListener('click', (event) => {
+  if (!blockForm.contains(event.target)) {
+    modalForm.classList.remove('modal_formActive');
+    body.classList.remove('no-scroll');
+  }
+});
 
 
 

@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="css/animate.min.css" data-inprogress="">
   <link rel="stylesheet" href="css/style.min.css" data-inprogress="">
+  <link rel="stylesheet" href="css/fancybox.css" data-inprogress="">
 
 </head>
 
@@ -94,6 +95,38 @@
 </header>
 
   <!-- Основной контент -->
+  <div class="modal_form contacts">
+    <div class="contacts_form-wrapper">
+        <div class="block_form">
+            <form action="#" class="form form_main">
+                <span class="close_form"></span>
+                <h5 class="form_title">Зв'яжіться з нами</h5>
+                <p>Будь ласка, дайте нам знати, якщо у вас є питання або побажання.</p>
+                <div class="inputs">
+                    <div class="input">
+                        <input type="text" name="name" placeholder="Ваше ім’я">
+                    </div>
+                    <div class="input">
+                        <input type="text" name="phone" placeholder="Ваш телефон">
+                    </div>
+                    <div class="input">
+                        <input type="text" name="email" placeholder="Ваш e-mail">
+                    </div>
+                    <div class="input">
+                        <textarea name="message" placeholder="Ваш коментар"></textarea>
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" class="custom-checkbox" id="checkbox2" name="checkbox_modal">
+                    <label class="checkbox_label-modal" data-checkbox-id="checkbox2" for="checkbox2">Я погоджуюсь з
+                        умовами
+                        <a href="#">політики конфідеальності</a> і дозволю обробляти мої персональні дані</label>
+                </div>
+                <button class="btn btn_form">Відправити</button>
+            </form>
+        </div>
+    </div>
+</div>
   <div class="mobile_menu">
     <div class="mobile_menu-wrapper">
         <button class="close_menu"></button>
@@ -244,9 +277,9 @@
             <h1 class="title title_main">Високоякісне обладнання для переробки горіхоплідних культур</h1>
             <span class="main_descr">Ми виробляємо обладнання для всіх процесів переробки горіхів від збирання до
                 ядра</span>
-            <a href="#" class="btn btn_main">Дізнатись ціни</a>
+            <button href="#" class="btn btn_main btnModal">Дізнатись ціни<!--и-->
             
-        </div>
+        </button></div>
         <ul class="social_media">
             <li>
                 <a href="#">
@@ -500,6 +533,7 @@
                             <img src="img/slider_item.png" alt="">
                         </div>
                     </div>
+                    <a href="#"></a>
                 </div>
                 <div class="swiper-slide">
                     <div class="slide_title">
@@ -529,6 +563,7 @@
                             <img src="img/slider_item.png" alt="">
                         </div>
                     </div>
+                    <a href="#"></a>
                 </div>
                 <div class="swiper-slide">
                     <div class="slide_title">
@@ -558,6 +593,7 @@
                             <img src="img/slider_item.png" alt="">
                         </div>
                     </div>
+                    <a href="#"></a>
                 </div>
                 <div class="swiper-slide">
                     <div class="slide_title">
@@ -587,6 +623,7 @@
                             <img src="img/slider_item.png" alt="">
                         </div>
                     </div>
+                    <a href="#"></a>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -702,6 +739,12 @@
                     <div class="input">
                         <textarea name="message" placeholder="Ваш коментар"></textarea>
                     </div>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" class="custom-checkbox" id="checkbox" name="checkbox_modal">
+                    <label class="checkbox_label-modal" data-checkbox-id="checkbox" for="checkbox">Я погоджуюсь з
+                        умовами
+                        <a href="#">політики конфідеальності</a> і дозволю обробляти мої персональні дані</label>
                 </div>
                 <button class="btn btn_form">Відправити</button>
             </form>

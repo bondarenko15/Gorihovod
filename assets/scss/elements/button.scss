@@ -18,6 +18,7 @@
     &_main {
         padding: 12px 40px;
         margin-top: 40px;
+        border: none;
     }
 
     &_form {
@@ -160,6 +161,9 @@
         &_transparent {
             width: 250px;
             font-size: 16px;
+            &:hover {
+                border: 1px solid transparent;
+            }
         }
         &_404 {
             margin-top: 35px;
