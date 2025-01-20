@@ -281,7 +281,7 @@
                         justify-content: space-between;
                         align-items: center;
                         margin-bottom: 15px;
-                        p {
+                        p,a {
                             color: $colorDark;
                             font-family: Overpass;
                             font-size: 20px;
@@ -360,7 +360,12 @@
                     max-height: 100vh;
                 }
             }
-
+            .text_page {
+                p,ul,ol {
+                    margin-top: 20px;
+                }
+                
+            }
         }
     }
 }
