@@ -17,7 +17,7 @@ showHide();
 /* validate(); */
 modal();
 
-
+gulp 
 new WOW().init();
 
 

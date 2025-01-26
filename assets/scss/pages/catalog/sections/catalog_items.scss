@@ -114,9 +114,9 @@
                                     display: flex;
                                     justify-content: flex-start;
                                     align-items: flex-start;
-                                    gap: 0 20px;
+                                    gap: 10px 20px;
                                     margin-top: 15px;
-
+                                    flex-wrap: wrap; 
                                     .characteristics_item {
                                         width: calc(50% - 10px);
                                         display: flex;
@@ -331,7 +331,7 @@
                             }
                         }
 
-                        span {
+                        a {
                             color: $colorDark;
                             font-family: Overpass;
                             font-size: 16px;
@@ -412,11 +412,6 @@
                                     }
 
                                     .descr_characteristics {
-                                        display: flex;
-                                        justify-content: flex-start;
-                                        align-items: flex-start;
-                                        gap: 0 20px;
-                                        margin-top: 15px;
 
                                         .characteristics_item {
                                             width: calc(50% - 10px);
@@ -601,11 +596,6 @@
                                     }
 
                                     .descr_characteristics {
-                                        display: flex;
-                                        justify-content: flex-start;
-                                        align-items: flex-start;
-                                        gap: 0 20px;
-                                        margin-top: 15px;
 
                                         .characteristics_item {
                                             width: calc(50% - 10px);
@@ -704,10 +694,6 @@
                                     }
 
                                     .descr_characteristics {
-                                        display: flex;
-                                        justify-content: flex-start;
-                                        align-items: flex-start;
-                                        gap: 0 20px;
                                         margin-top: 30px;
 
                                         .characteristics_item {
