@@ -6,6 +6,7 @@
         .block_text {
             padding: 60px 20px;
             background: #F8F8F8;
+
             p {
                 display: block;
                 margin-top: 15px;
@@ -15,9 +16,11 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
+
                 &:last-child {
                     margin: 0;
                 }
+
                 i {
                     text-decoration: underline;
                     font-weight: 700;
@@ -26,6 +29,7 @@
 
             ul {
                 margin-top: 25px;
+
                 li {
                     display: flex;
                     justify-content: flex-start;
@@ -51,7 +55,40 @@
                         height: 10px;
                         background: $colorBtn;
                         border-radius: 50px;
+                        display: flex;
+                        flex-shrink: 0;
 
+                    }
+                }
+            }
+
+            ol {
+                counter-reset: list-counter;
+                list-style: none;
+                padding-left: 0;
+
+                li {
+                    counter-increment: list-counter;
+                    margin-bottom: 20px;
+                    padding-left: 20px;
+                    position: relative;
+                    color: $colorDark;
+                    font-family: Overpass;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    &:last-child {
+                        margin: 0;
+                    }
+                    &::before {
+                        content: counter(list-counter) ".";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        font-weight: bold;
+                        font-size: 16px;
+                        color: #000;
                     }
                 }
             }
@@ -95,12 +132,15 @@
                 p {
                     font-size: 16px;
                     margin-bottom: 20px;
-                    
+
                 }
+
                 ul {
                     margin-top: 35px;
+
                     li {
                         font-size: 16px;
+
                         &::before {
                             width: 12px;
                             height: 12px;
@@ -131,16 +171,20 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: stretch;
+
             .block_img {
                 width: 50%;
                 height: auto;
             }
+
             .block_text {
                 width: 50%;
                 padding: 120px 100px;
+
                 p {
                     font-size: 18px;
                 }
+
                 ul {
                     li {
                         font-size: 18px;
@@ -158,9 +202,11 @@
         .block_wrapper {
             .block_text {
                 padding: 160px 130px;
+
                 p {
                     font-size: 20px;
                 }
+
                 ul {
                     li {
                         font-size: 20px;
@@ -169,11 +215,13 @@
             }
         }
     }
+
     .product-card_blockTextBig {
         .block_wrapper {
             .block_img {
                 width: 40%;
             }
+
             .block_text {
                 width: 60%;
             }
@@ -185,8 +233,9 @@
             .block_img {
                 width: 60%;
             }
+
             .block_text {
-                
+
                 width: 40%;
             }
         }
