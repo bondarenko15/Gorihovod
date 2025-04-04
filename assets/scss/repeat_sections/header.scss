@@ -5,7 +5,7 @@
     right: 0;
     z-index: 10;
     padding: 20px 0;
-
+    transition: background 0.2s ease, box-shadow 0.2s ease;
     .container {
         .header_wrapper {
             display: flex;
@@ -137,7 +137,13 @@
         }
     }
 }
-
+.header_fixed {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    z-index: 1000;
+}
 .header_white {
     border-bottom: 1px solid #E3DFDF;
     .container {
@@ -180,7 +186,13 @@
         }
     }
 }
-
+.header_white-fixed {
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
 @media (min-width: 768px) {
     .header {
 
@@ -205,7 +217,7 @@
 
         .container {
             .header_wrapper {
-                justify-content: flex-start;
+                justify-content: space-between;
 
                 .header_burger {
                     display: none;
@@ -213,7 +225,7 @@
 
                 nav {
                     display: block;
-                    margin-right: 90px;
+                    margin-right: 50px;
 
                     .header_navigation {
                         display: flex;
@@ -223,6 +235,7 @@
 
                         li {
                             position: relative;
+                            flex-shrink: 0  ;
 
                             span,
                             a {
@@ -303,8 +316,8 @@
                 }
 
                 .header_logo {
-                    width: 190px;
-                    height: 36px;
+                    width: 150px;
+                    height: 30px;
                     margin-right: 240px;
                 }
 
@@ -312,11 +325,11 @@
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
-                    gap: 0 70px;
+                    gap: 0 35px;
 
                     .header_mobile {
                         display: block;
-
+                        flex-shrink: 0;
                         a {
                             color: $colorWhite;
                             font-family: Overpass;
@@ -493,7 +506,7 @@
 
                 .header_logo {
                     width: 264px;
-                    height: 50px;
+                    height: 40px;
                     margin-right: 380px;
                 }
 

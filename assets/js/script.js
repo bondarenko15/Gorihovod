@@ -4,8 +4,7 @@ import filter from './filter.min.js';
 import animation from './animation.min.js';
 import mobileMenu from './mobileMenu.min.js';
 import showHide from './showHide.min.js';
-/* import validate from './validate.min.js';
- */
+import validate from './validate.min.js';
 import modal from './modal.min.js';
 
 initSlider();
@@ -14,10 +13,9 @@ filter();
 animation();
 mobileMenu();
 showHide();
-/* validate(); */
+validate();
 modal();
 
-gulp 
 new WOW().init();
 
 
@@ -32,5 +30,18 @@ if (fancybox) {
   });
 }
 
+document.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+
+  if (window.scrollY > 0) {
+      header.classList.add('header_fixed');
+
+      if (header.classList.contains('header_white')) {
+          header.classList.add('header_white-fixed');
+      }
+  } else {
+      header.classList.remove('header_fixed', 'header_white-fixed');
+  }
+});
 
 

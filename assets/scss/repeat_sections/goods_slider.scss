@@ -12,7 +12,10 @@
                     box-shadow: (0px 5px 5px rgba(0, 0, 0, 0.25));
                     padding: 20px;
                     position: relative;
-
+                    transition: 0.2s all ease;
+                    &:hover {
+                        box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.55);
+                    }
                     &::before {
                         content: '';
                         position: absolute;
@@ -29,6 +32,7 @@
                         align-items: stretch;
 
                         .slide_btn {
+                            background: transparent;
                             border-radius: 4px;
                             border: 1px solid $colorDark;
                             padding: 8px;
@@ -44,9 +48,10 @@
                             align-items: center;
                             gap: 0 5px;
                             z-index: 5;
+
                             &::before {
                                 content: '';
-                                display: block;
+                                display: none;
                                 background: url('../img/file-invoice-dollar.svg') center center/cover no-repeat;
                                 width: 16px;
                                 height: 16px;
@@ -63,18 +68,20 @@
                     }
 
                     .slide_content {
-                        &-descr {
-                            .descr_title {
-                                color: $colorDark;
-                                font-family: Overpass;
-                                font-size: 18px;
-                                font-style: normal;
-                                font-weight: 600;
-                                line-height: 28px;
-                                text-transform: uppercase;
-                                margin-top: 20px;
-                            }
+                        .descr_title {
+                            color: $colorDark;
+                            font-family: Overpass;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 28px;
+                            text-transform: uppercase;
+                            margin: 20px 0;
+                            display: block;
+                            width: 100%;
+                        }
 
+                        &-descr {
                             .descr_subtitle {
                                 color: $colorDark;
                                 font-family: Overpass;
@@ -82,7 +89,10 @@
                                 font-style: normal;
                                 font-weight: 400;
                                 line-height: normal;
-                                display: block;
+                                display: -webkit-box;
+                                overflow: hidden;
+                                -webkit-line-clamp: 5;
+                                -webkit-box-orient: vertical;
                                 margin-top: 15px;
                             }
 
@@ -97,48 +107,13 @@
                                 margin-top: 15px;
                             }
 
-                            .descr_characteristics {
-                                display: flex;
-                                justify-content: flex-start;
-                                align-items: flex-start;
-                                gap: 0 20px;
-                                margin-top: 15px;
 
-                                .characteristics_item {
-                                    width: calc(50% - 10px);
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: 3px 0;
-
-                                    span {
-                                        color: #2B2E30;
-                                        font-family: Overpass;
-                                        font-size: 12px;
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        line-height: normal;
-                                        text-transform: uppercase;
-                                    }
-
-                                    p {
-                                        color: $colorDark;
-                                        font-family: Overpass;
-                                        font-size: 14px;
-                                        font-style: normal;
-                                        font-weight: 500;
-                                        line-height: normal;
-                                        text-transform: lowercase;
-                                    }
-                                }
-                            }
                         }
 
                         &-img {
                             margin-top: 20px;
                             max-width: 100%;
                             overflow: hidden;
-                            max-height: 400px;
-
                             img {
                                 width: 100%;
                                 height: 100%;
@@ -146,7 +121,44 @@
                                 object-fit: cover;
                             }
                         }
+
+                        .descr_characteristics {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            gap: 10px;
+                            margin-top: 15px;
+
+                            .characteristics_item {
+                                width: calc(50% - 10px);
+                                display: flex;
+                                flex-direction: column;
+                                gap: 3px 0;
+
+                                span {
+                                    color: #2B2E30;
+                                    font-family: Overpass;
+                                    font-size: 14px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: normal;
+                                    text-transform: uppercase;
+                                }
+
+                                p {
+                                    color: $colorDark;
+                                    font-family: Overpass;
+                                    font-size: 16px;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    line-height: normal;
+                                    text-transform: lowercase;
+                                }
+                            }
+                        }
                     }
+
                     a {
                         position: absolute;
                         inset: 0;
@@ -182,66 +194,83 @@
                 .swiper-wrapper {
                     .swiper-slide {
                         padding: 25px;
+                        .slide_title {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: stretch;
 
+                            .slide_btn {
+                                transition: .15s all ease;
+                                &:hover {
+                                    box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.15);
+                                    font-weight: 700;
+                                }
+                            }
+                        }
                         .slide_content {
                             display: flex;
                             justify-content: flex-start;
-                            align-items: flex-end;
+                            align-items: flex-start;
+                            flex-wrap: wrap;
                             gap: 0 15px;
                             margin-top: 20px;
+
+                            .descr_title {
+                                font-size: 20px;
+                            }
 
                             &-descr {
                                 width: calc(50% - 8px);
 
-                                .descr_title {
-                                    font-size: 20px;
+                                .descr_subtitle {
                                     margin: 0;
+                                    -webkit-line-clamp: 11;
                                 }
 
                                 .descr_price {
                                     font-size: 18px;
                                     margin-top: 20px;
                                 }
+                            }
 
-                                .descr_characteristics {
+                            .descr_characteristics {
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                gap: 10px;
+                                margin-top: 15px;
+                                width: 100%;
+                                .characteristics_item {
+                                    width: auto;
                                     display: flex;
-                                    justify-content: flex-start;
-                                    align-items: flex-start;
-                                    gap: 0 20px;
-                                    margin-top: 15px;
+                                    flex-direction: column;
+                                    gap: 3px 0;
 
-                                    .characteristics_item {
-                                        width: calc(50% - 10px);
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 3px 0;
+                                    span {
+                                        color: #2B2E30;
+                                        font-family: Overpass;
+                                        font-size: 14px;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        line-height: normal;
+                                        text-transform: uppercase;
+                                    }
 
-                                        span {
-                                            color: #2B2E30;
-                                            font-family: Overpass;
-                                            font-size: 12px;
-                                            font-style: normal;
-                                            font-weight: 400;
-                                            line-height: normal;
-                                            text-transform: uppercase;
-                                        }
-
-                                        p {
-                                            color: $colorDark;
-                                            font-family: Overpass;
-                                            font-size: 14px;
-                                            font-style: normal;
-                                            font-weight: 500;
-                                            line-height: normal;
-                                            text-transform: lowercase;
-                                        }
+                                    p {
+                                        color: $colorDark;
+                                        font-family: Overpass;
+                                        font-size: 16px;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: normal;
+                                        text-transform: lowercase;
                                     }
                                 }
                             }
 
                             &-img {
                                 margin: 0;
-                                max-height: 280px;
                                 width: calc(50% - 8px);
                                 flex-shrink: 0;
                             }
@@ -270,9 +299,7 @@
 
                         .slide_content {
                             display: flex;
-                            justify-content: space-between;
-                            align-items: flex-end;
-                            gap: 0 15px;
+                            gap: 15px;
                             margin-top: 20px;
 
                             &-descr {
@@ -281,8 +308,7 @@
 
                             &-img {
                                 margin: 0;
-                                max-height: 250px;
-                                width: calc(40% - 8px);
+                                width: calc(50% - 8px);
                                 flex-shrink: 0;
                             }
                         }
@@ -309,13 +335,8 @@
 
                         .slide_content {
                             display: flex;
-                            flex-direction: column;
-                            justify-content: flex-start;
-                            align-items: center;
-                            gap: 30px 0;
 
                             &-descr {
-                                width: 100%;
 
                                 .descr_title {
                                     font-size: 22px;
@@ -325,23 +346,6 @@
                                     font-size: 18px;
                                 }
 
-                                .descr_characteristics {
-                                    .characteristics_item {
-                                        span {
-                                            font-size: 14px;
-                                        }
-
-                                        p {
-                                            font-size: 16px;
-                                        }
-                                    }
-                                }
-                            }
-
-                            &-img {
-                                margin: 0;
-                                width: 350px;
-                                height: 250px;
                             }
                         }
                     }
@@ -361,52 +365,22 @@
                 .swiper-wrapper {
                     .swiper-slide {
                         .slide_content {
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            align-items: center;
-                            gap: 0 20px;
                             margin-top: 45px;
+                            .descr_title {
+                                font-size: 24px;
+                            }
                             &-descr {
-                                width: calc(45% - 10px);
+
                                 
-                                .descr_title {
-                                    font-size: 24px;
-                                }
 
                                 .descr_subtitle {
                                     font-size: 18px;
-                                    margin-top: 20px;
                                 }
 
                                 .descr_price {
                                     font-size: 18px;
                                     margin-top: 20px;
                                 }
-
-                                .descr_characteristics {
-                                    display: flex;
-                                    justify-content: flex-start;
-                                    align-items: flex-start;
-                                    gap: 0 20px;
-                                    margin-top: 30px;
-
-                                    .characteristics_item {
-
-                                        span {
-                                            font-size: 16px;
-                                        }
-
-                                        p {
-                                            font-size: 18px;
-                                        }
-                                    }
-                                }
-                            }
-
-                            &-img {
-                                width: calc(55% - 10px);
-                                max-height: 400px;
-                                height: 295px;
                             }
                         }
                     }
@@ -428,6 +402,7 @@
                     .swiper-slide {
                         .slide_content {
                             justify-content: space-between;
+
                             &-img {
                                 width: calc(40% - 10px);
                             }

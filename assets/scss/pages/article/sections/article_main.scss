@@ -57,24 +57,31 @@
             p {
                 display: block;
                 margin-top: 20px;
+                img {
+                    display: block;
+                    margin: 0 auto 15px;
+                }
+                iframe {
+                    display: block;
+                    margin: 0 auto;
+                    width: 100%;                
+                }
             }
+
             ul {
                 margin-top: 25px;
 
                 li {
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
                     gap: 0 10px;
                     position: relative;
                     color: $colorDark;
                     font-family: Overpass;
                     font-size: 14px;
                     font-style: normal;
-                    font-weight: 700;
+                    font-weight: 500;
                     line-height: normal;
                     margin-bottom: 20px;
-
+                    padding: 0 0 0 15px;
                     &:last-child {
                         margin: 0;
                     }
@@ -84,10 +91,11 @@
                         display: block;
                         width: 10px;
                         height: 10px;
+                        position: absolute;
+                        top: 2px;
+                        left: 0;
                         background: $colorBtn;
                         border-radius: 50px;
-                        display: flex;
-                        flex-shrink: 0;
 
                     }
                 }
@@ -109,9 +117,11 @@
                     font-style: normal;
                     font-weight: 700;
                     line-height: normal;
+
                     &:last-child {
                         margin: 0;
                     }
+
                     &::before {
                         content: counter(list-counter) ".";
                         position: absolute;
@@ -198,8 +208,29 @@
 
                 p {
                     margin-top: 30px;
+                    .alignleft {
+                        float: left;
+                        margin: 0 15px 0 0;
+                        
+                    }
+                    .alignright {
+                        float: right;
+                        margin: 0 0 0 15px;
+                    }
+                    iframe {
+                        width: 800px;
+                        height: 450px;
+                    }
                 }
-                ul, ol {
+                ul {
+                    li {
+                        &::before {
+                            top: 6px;
+                        }
+                    }
+                }
+                ul,
+                ol {
                     li {
                         font-size: 18px;
                         margin-bottom: 20px;
@@ -214,6 +245,7 @@
 @media (min-width: 1880px) {
     .article_main {
         padding: 80px 0 30px;
+
         .container {
             .default_block {
                 margin-bottom: 50px;
@@ -231,7 +263,9 @@
                     font-size: 20px;
                     margin-top: 40px;
                 }
-                ul, ol {
+
+                ul,
+                ol {
                     li {
                         font-size: 20px;
                     }

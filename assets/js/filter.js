@@ -38,5 +38,33 @@ export default function filter() {
                 body.classList.remove('no-scroll');
             }
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.checkbox-option').forEach(option => {
+                const arrow = option.querySelector('.filter_arrow');
+                const items = option.querySelector('.option_block-items');
+        
+                arrow?.addEventListener('click', (e) => {
+                    e.stopPropagation();
+        
+                    const isActive = arrow.classList.contains('filter_arrowActive');
+        
+                    document.querySelectorAll('.option_block-items').forEach(el => el.classList.remove('items-active'));
+                    document.querySelectorAll('.filter_arrow').forEach(el => el.classList.remove('filter_arrowActive'));
+        
+                    if (!isActive) {
+                        items?.classList.add('items-active');
+                        arrow.classList.add('filter_arrowActive');
+                    }
+                });
+            });
+        
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.option_block-items').forEach(el => el.classList.remove('items-active'));
+                document.querySelectorAll('.filter_arrow').forEach(el => el.classList.remove('filter_arrowActive'));
+            });
+        });
+        
+        
     }
 }

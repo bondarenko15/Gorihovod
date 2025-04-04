@@ -1,30 +1,34 @@
 export default function mobileMenu() {
-    const linksWithSubnav = document.querySelectorAll('.mobile_menu-nav a');
-    linksWithSubnav.forEach(link => {
-        const siblingMenu = link.nextElementSibling;
-        if (siblingMenu && siblingMenu.tagName === 'UL') {
-            link.classList.add('has-subnav');
-            link.addEventListener('click', (e) => {
-                const clickPosition = e.offsetX;
-                const linkWidth = link.offsetWidth;
-                if (clickPosition < linkWidth - 30) {
-                    return;
-                }
-                e.preventDefault();
-                const parentList = link.closest('ul');
-                parentList.querySelectorAll('ul.open').forEach(openMenu => {
-                    openMenu.classList.remove('open');
-                });
-                parentList.querySelectorAll('a.open').forEach(openLink => {
-                    openLink.classList.remove('open');
-                });
-                if (!siblingMenu.classList.contains('open')) {
-                    siblingMenu.classList.add('open');
-                    link.classList.add('open');
-                }
+    const linksWithSubnav = document.querySelectorAll('.mobile_menu-nav span');
+
+linksWithSubnav.forEach(link => {
+    const siblingMenu = link.nextElementSibling;
+    if (siblingMenu && siblingMenu.tagName === 'UL') {
+        link.classList.add('has-subnav');
+        
+        link.addEventListener('click', (e) => {
+            const clickPosition = e.offsetX;
+            const linkWidth = link.offsetWidth;
+            if (clickPosition < linkWidth - 30) {
+                return;
+            }
+            e.preventDefault();
+            
+            const parentList = link.closest('ul');
+            const isOpen = siblingMenu.classList.contains('open');
+            document.querySelectorAll('.mobile_menu-nav ul.open').forEach(openMenu => {
+                openMenu.classList.remove('open');
             });
-        }
-    });
+            document.querySelectorAll('.mobile_menu-nav span.open').forEach(openLink => {
+                openLink.classList.remove('open');
+            });
+            if (!isOpen) {
+                siblingMenu.classList.add('open');
+                link.classList.add('open');
+            }
+        });
+    }
+});
 
 
 

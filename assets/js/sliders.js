@@ -1,24 +1,53 @@
 export default function initSlider() {
-    const swiperGoodsElements = document.querySelectorAll('.swiper_goods') || null;
-    if (swiperGoodsElements) {
-        swiperGoodsElements.forEach((newSwiper) => {
-            const sliderGoods = new Swiper(newSwiper, {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                pagination: {
-                    el: ".swiper_goods .swiper-pagination",
-                    dynamicBullets: true,
-                },
-                breakpoints: {
-                    1366: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    }
-                }
+    const swiperGoodsElements = document.querySelectorAll('.swiper_goods');
+
+    if (swiperGoodsElements.length) {
+        const setEqualHeight = () => {
+            swiperGoodsElements.forEach((newSwiper) => {
+                const swiperEl = newSwiper.querySelector('.swiper-wrapper');
+                if (!swiperEl) return;
+    
+                let maxHeight = 0;
+                const slides = swiperEl.querySelectorAll('.swiper-slide');
+    
+                slides.forEach(slide => slide.style.height = 'auto'); 
+                slides.forEach(slide => maxHeight = Math.max(maxHeight, slide.offsetHeight));
+                slides.forEach(slide => slide.style.height = `${maxHeight}px`);
             });
-        });
+        };
+    
+        const initSwiper = () => {
+            swiperGoodsElements.forEach((newSwiper) => {
+                const swiperInstance = new Swiper(newSwiper, {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    loop: true,
+                    pagination: {
+                        el: newSwiper.querySelector('.swiper-pagination'),
+                        dynamicBullets: true,
+                    },
+                    breakpoints: {
+                        1366: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        }
+                    },
+                    observer: true,
+                    observeParents: true,
+                    on: {
+                        init: () => setTimeout(setEqualHeight, 50), 
+                        slideChange: setEqualHeight, 
+                    }
+                });
+    
+                setTimeout(setEqualHeight, 100);
+            });
+        };
+    
+        initSwiper();
+        window.addEventListener('resize', setEqualHeight);
     }
+    
 
 
 
@@ -120,7 +149,7 @@ export default function initSlider() {
                 },
             }
         });
-        
+
     }
 
 
@@ -148,7 +177,7 @@ export default function initSlider() {
                 },
             }
         });
-        
+
     }
 }
 
